@@ -1,0 +1,9 @@
+theme = light:catppuccin-frappe.conf,dark:catppuccin-mocha.conf
+
+background-opacity     = 0.8
+background-blur        = true
+background-blur-radius = 5
+
+shell-integration-features = no-cursor
+cursor-style               = block
+cursor-style-blink         = false
