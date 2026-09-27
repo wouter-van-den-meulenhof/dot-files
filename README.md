@@ -28,13 +28,23 @@ On MacOS I use the `homebrew` package manager to install and update the software
 
 ### MacOS
 
-First install [homebrew](https://brew.sh/) by running their installation script. Then, extract the contents of the `/macos` directory verbatim to the root of your home home directory. Finally, run the following command to install the software and applications:
+First install [homebrew](https://brew.sh/) by running their installation script. 
+
+Then, extract the contents of the `/macos` directory verbatim to the root of your home home directory by running the following one liner (note that MacOS ships with jq installed by default):
+
+```zsh
+curl -sL https://api.github.com/repos/wouter-van-den-meulenhof/dot-files/contents/macos \
+   | jq -r '.[] | .download_url'                                                        \
+   | xargs -n1 curl -sLO
+```
+
+Finally, run the following command to install tools and apps:
 
 ```zsh
 brew bundle --file="~/Brewfile"
 ```
 
-After installing and configuring the software, follow [beerisgood's](https://github.com/beerisgood) [MacOS hardening guide](https://github.com/beerisgood/macOS_Hardening) and apply the recommended hardenings.
+After installing and configuring the software, follow [beerisgood's](https://github.com/beerisgood) [MacOS hardening guide](https://github.com/beerisgood/macOS_Hardening) and apply the recommended hardenings, bar the one telling you not to use Homebrew.
 
 ## Author
 
